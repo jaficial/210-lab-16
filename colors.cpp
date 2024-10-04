@@ -1,5 +1,5 @@
-// COMSC-210 | Lab 14 | Jed Aficial
-// github link: https://github.com/jaficial/210-lab-14
+// COMSC-210 | Lab 16 | Jed Aficial
+// github link: https://github.com/jaficial/210-lab-16
 
 #include <iostream>
 #include <iomanip>
@@ -22,10 +22,14 @@ private:
 	string color_name;
 
 public:
+	/* NOTE: default constructor does not take in any parameters. 
+			 partial constructor takes in name and red value as parameters.
+			 full param. constructor takes in name, and all three RGB values as parameters. */
+
 	// default constructor
 	color() {color_name = "none"; red_value = 0; green_value = 0; blue_value = 0;}
 	// partial constructor
-	color(string name) {color_name = name; red_value = 0; green_value = 0; blue_value = 0;}
+	color(string name, int red) {color_name = name; red_value = red; green_value = 0; blue_value = 0;}
 	// full parameter constructor
 	color(string name, int red, int green, int blue) {color_name = name; red_value = red; green_value = green; blue_value = blue;}
 
@@ -42,31 +46,21 @@ public:
 
 void print(color);
 
-/* CITED: Cited the class lecture code when testing with the setw() function
-   as well as for testing and learning the syntax of writing a basic class */
-// 3 color objects are written and defined in the main function
-int main() {
+/* CITED: Cited the class lecture code for Class constructors. 
+		  Used a similar format when writing the default, partial,
+		  and full parameter constructors in the color class. */
 
+// 3 color objects are written and defined in the main function to display the three different constructors
+int main() {
 	color nothing;
 	nothing.print();
 
-	color white;
-	white.color("white");
-/*
-	color wine;
-	wine.setcolor_name("Wine");
-	wine.setred_value(114);
-	wine.setgreen_value(47);
-	wine.setblue_value(55);
+	color white("white", 255);
+	white.print();
+
+	color wine("Wine", 114, 47, 55);
 	wine.print();
 
-	color forrest_green;
-	forrest_green.setcolor_name("Forrest Green");
-	forrest_green.setred_value(20);
-	forrest_green.setgreen_value(142);
-	forrest_green.setblue_value(20);
-	forrest_green.print();
-*/
 	return 0;
 }
 
