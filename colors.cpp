@@ -52,12 +52,15 @@ void print(color);
 
 // 3 color objects are written and defined in the main function to display the three different constructors
 int main() {
+	// default constructor
 	color nothing;
 	nothing.print();
 
+	// partial constructor
 	color white("white", 255);
 	white.print();
 
+	// full constructor
 	color wine("Wine", 114, 47, 55);
 	wine.print();
 
