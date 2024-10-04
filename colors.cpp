@@ -22,21 +22,12 @@ private:
 	string color_name;
 
 public:
-	int getred_value() {return red_value;} // getter returns the red RGB value 
-	void setred_value(int red) {red_value = red;} // setter assigns the received red RGB value to red_value
-	
-	/* getter and setter for 'green_value', 'blue_value', 'getcolor_name'
-	   work exactly the same as the getter and setter for 'red_value'.
-	   Only difference is that 'getcolor_name' gets and sets a string vs. 
-	   getting and setting an int for the RGB values variables. */
-	int getgreen_value() {return green_value;} 
-	void setgreen_value(int green) {green_value = green;}
-
-	int getblue_value() {return blue_value;}
-	void setblue_value(int blue) {blue_value = blue;}
-
-	string getcolor_name() {return color_name;}
-	void setcolor_name(string name) {color_name = name;}
+	// default constructor
+	color() {color_name = "none"; red_value = 0; green_value = 0; blue_value = 0;}
+	// partial constructor
+	color(string name) {color_name = name; red_value = 0; green_value = 0; blue_value = 0;}
+	// full parameter constructor
+	color(string name, int red, int green, int blue) {color_name = name; red_value = red; green_value = green; blue_value = blue;}
 
 	// 'print' function outputs the name of the color, and its RGB values
 	void print() {
@@ -56,13 +47,12 @@ void print(color);
 // 3 color objects are written and defined in the main function
 int main() {
 
-	color brown;
-	brown.setcolor_name("Brown");
-	brown.setred_value(150);
-	brown.setgreen_value(75);
-	brown.setblue_value(0);
-	brown.print();
+	color nothing;
+	nothing.print();
 
+	color white;
+	white.color("white");
+/*
 	color wine;
 	wine.setcolor_name("Wine");
 	wine.setred_value(114);
@@ -76,7 +66,7 @@ int main() {
 	forrest_green.setgreen_value(142);
 	forrest_green.setblue_value(20);
 	forrest_green.print();
-
+*/
 	return 0;
 }
 
