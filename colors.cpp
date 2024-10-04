@@ -13,7 +13,7 @@ const int min_rgb = 0;
 
 /* 'color' class contains 4 private member variables, three
 	of them have type int for taking in a RGB value from 0-255.
-	The last member is for taking in a string of the color name. */ 
+	The last member is for taking in a string of the color name.  */ 
 class color {
 private:
 	int red_value;
